@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border: 2px solid;
+            width: 500px;
+            background-image: url("../assests/bgimage.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 400px;
+            height: 600px;
+        }
+        
+        #img1{
+            position:absolute;
+            top: 20px;
+            border: 2px solid;
+            border-radius: 50%;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <img src="#" alt="image" id="img1">
+        <h2>Jhansi</h2>
+        <h3>web developer</h3>
+        <h3>ID:1234</h3>
+        <h3>10000CODERS</h3>
+    </div>
+    
+     <script>
+         // Set the image source
+        let x = document.getElementById("img1");
+        x.setAttribute("src","../assests/resume pic.webp");
+        x.setAttribute("width","150px");
+        x.setAttribute("height","150px");
+        // Get the card element and apply styles
+        let a=document.getElementById("card");
+        a.style.border="2px solid black";
+        a.style.borderRadius="16px";
+        a.style.boxShadow="0px 4px 8px 0px"
+        //Change color of the <h2> element
+        let y=document.querySelector("h2");
+        y.style.color="blue";
+     </script>
+    
+</body>
+</html>
