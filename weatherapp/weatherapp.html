@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="images/weather1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            padding-top: 40px;
+        }
+
+        /* Search Bar */
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 250px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            outline: none;
+        }
+
+        .search-button {
+            padding: 10px 15px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background: #0056b3;
+        }
+
+        /* Weather Display */
+        .weather-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-container h1 {
+            font-size: 60px;
+            color: white;
+        }
+
+        .weather-container h3 {
+            font-size: 22px;
+            color: #f8f8f8;
+        }
+
+        .weather-icon {
+            width: 80px;
+            margin: 10px 0;
+        }
+
+        /* Hourly Forecast */
+        .forecast-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .forecast {
+            width: 80px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .forecast img {
+            width: 50px;
+        }
+
+        .forecast h6 {
+            margin-top: 5px;
+            font-size: 14px;
+            color: white;
+        }
+
+        /* Map */
+        .map {
+            margin-top: 20px;
+        }
+
+        iframe {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #007BFF;
+        }
+
+        @media screen and (max-width: 600px) {
+            .weather-container h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search for a city...">
+            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <!-- Weather Display -->
+        <div class="weather-container">
+            <img src="images/sun-2.png" alt="Weather Icon" class="weather-icon">
+            <h1>29°C</h1>
+            <h3>Unagatla, East Godavari</h3>
+        </div>
+
+        <!-- Hourly Forecast -->
+        <div class="forecast-container">
+            <div class="forecast">
+                <h6>1:00 PM</h6>
+                <img src="images/sun-2.png" alt="sun">
+                <h6>33°C</h6>
+            </div>
+            <div class="forecast">
+                <h6>2:00 PM</h6>
+                <img src="images/sun-2.png" alt="sun">
+                <h6>32°C</h6>
+            </div>
+            <div class="forecast">
+                <h6>3:00 PM</h6>
+                <img src="images/sun-2.png" alt="sun">
+                <h6>31°C</h6>
+            </div>
+            <div class="forecast">
+                <h6>6:00 PM</h6>
+                <img src="images/moon.jpeg" alt="moon">
+                <h6>30°C</h6>
+            </div>
+            <div class="forecast">
+                <h6>8:00 PM</h6>
+                <img src="images/moon.jpeg" alt="moon">
+                <h6>29°C</h6>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265.06913574549!2d81.6462994601854!3d16.96139801608738!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37afba5488bdad%3A0x80ad86646b6d10cc!2sUnagatala%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1727618601415!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2025 Weather App. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
